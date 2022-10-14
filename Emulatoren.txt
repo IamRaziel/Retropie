@@ -1,0 +1,10 @@
+DS: 
+	drastic: 	experimental package 
+SNES:
+	pisnes: 	optional package
+	lr-snes9x: 	main package
+	
+	
+Bugs beim wechseln der Emulatoren:
+	sudo chown -R pi:pi /opt/retropie/configs
+	sudo rm /opt/retropie/configs/all/emulators.cfg

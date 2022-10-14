@@ -1,0 +1,9 @@
+https://www.emulatorgames.net/search/?kw=pokemon
+https://coolrom.com.au/
+
+mit scp (ssh daten) verbinden:
+ROMS in RetroPie/roms kopieren
+
+FALLS FÜR EMULATOR, welcher noch nicht installiert ist (zum Beispiel Nintendo DS)
+im GameBody unter RetroPie/RetroPieSetup/Manage Pacakages
+

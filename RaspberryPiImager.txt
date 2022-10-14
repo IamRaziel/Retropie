@@ -1,0 +1,3 @@
+strg+shift+x advanced options
+name: pi pw: raspberry
+hostname: retropie_.local		_ wird mit etwas ersetzt

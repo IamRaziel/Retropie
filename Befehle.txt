@@ -1,0 +1,43 @@
+VERBINDEN RASPBERRY PI ÜBER SSH:
+ssh pi@retopie_.local			_ : gegebenenfalls ersetzt
+pw: raspberry					  : gegebenenfalls anderst	
+
+
+BILDSCHIRM:
+sudo apt-get install cmake
+git clone https://github.com/juj/fbcp-ili9341.git
+cd fbcp-ili9341
+mkdir build
+cd build
+cmake -DSPI_BUS_CLOCK_DIVISOR=20 -DWAVESHARE35B_ILI9486=ON ..				//DIVISOR Value can be changed maybe
+make -j
+sudo ./fbcp-ili9341														//SHOULD WORK NOW
+
+OPTIONAL FALLS UNZUFRIEDEN MIT ERGEBNIS:
+cd ../
+sudo rm -rf build
+WIEDER VON ZEILE 4 mit danderen DIVISOR wert
+
+sudo nano /etc/rc.local
+ADD line: 
+sudo /home/pi/fbcp-ili9341/build/fbcp-ili9341 & 
+
+
+RETROGAME Installation:
+cd
+curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/retrogame.sh >retrogame.sh
+sudo bash retrogame.sh
+SELECT SUPER_GAME_PI
+
+GEGEBENENFALLS BUTTON BELEGUNG ÄNDERN
+sudo nano /boot/retrogame.cfg
+
+
+AUDIO:
+sudo nano /boot/config.txt
+ADD line: 
+dtoverlay=audremap,pins_18_19,enable_jack=on
+
+
+CHANGING SETTINGS: (like hostname)
+sudo raspi-config
